@@ -1,0 +1,35 @@
+<!--?xml version='1.0'?-->
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.enduranceRaceTiming.domain.meet">
+ 
+    <class name="Meet" table="meet">
+        <id name="id" column="Id">
+            <generator class="native">
+        </generator></id>
+        <property name="name"></property>
+        <property name="location"></property>
+        <property name="date"></property>
+        <property name="year"></property>
+        
+        <many-to-one name="sportType" column="Sport_Type_Id" not-null="true" lazy="false"/>
+        
+        <set name="results" table="result" inverse="true" lazy="false" fetch="select" cascade="all">
+           	<key>
+            	<column name="meet_id" not-null="true" />
+        	</key>
+            <one-to-many class="com.enduranceRaceTiming.domain.result.Result" />
+        </set>
+    </class>
+    
+    <query name="findMeetsByYear">
+        <![CDATA[from Meet m where YEAR(m.date) = :year]]>
+    </query>
+    
+    <query name="findMeetsBySport">
+        <![CDATA[from Meet m where m.sportType = :sport]]>
+    </query>
+    
+</hibernate-mapping>

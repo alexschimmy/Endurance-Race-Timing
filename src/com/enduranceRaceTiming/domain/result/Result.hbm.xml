@@ -1,0 +1,38 @@
+<!--?xml version='1.0'?-->
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.enduranceRaceTiming.domain.result">
+ 
+    <class name="Result" table="result">
+        <id name="id" column="Id">
+            <generator class="native">
+        </generator></id>
+        <property name="athlete_1_name"></property>
+        <property name="athlete_1_year"></property>
+        <property name="athlete_2_name"></property>
+        <property name="athlete_2_year"></property>
+        <property name="athlete_3_name"></property>
+        <property name="athlete_3_year"></property>
+        <property name="athlete_4_name"></property>
+        <property name="athlete_4_year"></property>
+        <property name="place"></property>
+        <property name="school_name"></property>
+        <property name="seed"></property>
+        <property name="result"></property>
+        <property name="heat_nbr"></property>
+        <property name="comments"></property>
+        <property name="points"></property>
+        <property name="bib_nbr"></property>
+        <property name="pace"></property>
+        
+        <many-to-one name="eventType" column="Event_Type_Id" not-null="true" lazy="false"/>
+        <many-to-one name="roundType" column="Round_Type_Id" not-null="true" lazy="false"/>
+        
+        <many-to-one name="meet" class="com.enduranceRaceTiming.domain.meet.Meet" lazy="false" fetch="select">
+            <column name="Meet_Id" not-null="true" />
+        </many-to-one>
+    </class>
+ 
+</hibernate-mapping>

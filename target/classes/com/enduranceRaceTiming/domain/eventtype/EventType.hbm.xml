@@ -1,0 +1,19 @@
+<!--?xml version='1.0'?-->
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+ 
+<hibernate-mapping package="com.enduranceRaceTiming.domain.eventtype">
+ 
+    <class name="EventType" table="event_type">
+        <id name="id" column="Id">
+            <generator class="native">
+        </generator></id>
+        <property name="description">
+        </property>
+        
+        <many-to-one name="displayType" column="Display_Type_Id" not-null="true" lazy="false"/>
+        <many-to-one name="sportType" column="Sport_Type_Id" not-null="true" lazy="false"/>
+    </class>
+ 
+</hibernate-mapping>
