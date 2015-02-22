@@ -15,11 +15,14 @@ select 'file' then select 'import'
 expand 'Git' and select 'projects from git'
 select 'Clone URI' then paste the github clone url in the URI box
 you should be able to just hit next through the rest of the screens
+you might have a build path error. to fix this right-click on the project then build path - then configure build path - then go to the source tab - then select the 'enduranceRaceTiming/com.enduranceRaceTiming.....' and then remove it.
+
 
 steps to setup a local tomcat server
 select 'window' from nav bar at the top
 then select 'show view' then 'servers'
 then somehow in the new 'servers' box at the bottom add tomcat 7
+browse to where you saved the tomcat folder
 then right click on the server and select 'add or remove' and add endurance race timing.
 then you can right click on the server and select start.
 then in your web browser this is the link  http://localhost:8080/EnduranceRaceTiming
