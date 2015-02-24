@@ -12,20 +12,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.enduranceRaceTiming.domain.displaytype.DisplayTypeDao;
-import com.enduranceRaceTiming.domain.eventtype.EventTypeDao;
 import com.enduranceRaceTiming.domain.meet.Meet;
 import com.enduranceRaceTiming.domain.meet.MeetDao;
 import com.enduranceRaceTiming.domain.result.Result;
-import com.enduranceRaceTiming.domain.result.ResultDao;
 
 @Controller
 public class ResultsController {
-	private static final String DISPLAY_RESULTS = "displayResults";
-	private DisplayTypeDao displayTypeDao = new DisplayTypeDao();
-	private EventTypeDao eventTypeDao = new EventTypeDao();
 	private MeetDao meetDao = new MeetDao();
-	private ResultDao resultDao = new ResultDao();
 	
 	@RequestMapping(value = "/results", method = RequestMethod.GET)
 	public ModelAndView getResults(@ModelAttribute("meetId") Integer meetId) {
@@ -50,6 +43,8 @@ public class ResultsController {
 				}
 			}
 			meet.setResultsMap(resultsMap);
+		} else {
+			// no meet record
 		}
 	}
 }
