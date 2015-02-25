@@ -16,7 +16,7 @@
         
         <many-to-one name="sportType" column="Sport_Type_Id" not-null="true" lazy="false"/>
         
-        <set name="results" table="result" inverse="true" lazy="false" fetch="select" cascade="all">
+        <set name="results" table="result" inverse="true" lazy="false" fetch="select" cascade="all" order-by="place asc">
            	<key>
             	<column name="meet_id" not-null="true" />
         	</key>
