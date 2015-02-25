@@ -17,7 +17,6 @@ public class Meet {
 	private String location;
 	private Date date;
 	private SportType sportType;
-	private Integer year;
 	private Set<Result> results;
 	
 	private Map<Integer, List<Result>> resultsMap;
@@ -57,12 +56,6 @@ public class Meet {
 	}
 	public void setSportType(SportType sportType) {
 		this.sportType = sportType;
-	}
-	public Integer getYear() {
-		return year;
-	}
-	public void setYear(Integer year) {
-		this.year = year;
 	}
 	public Set<Result> getResults() {
 		return results;
