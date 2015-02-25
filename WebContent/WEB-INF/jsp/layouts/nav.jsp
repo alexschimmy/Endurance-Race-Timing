@@ -17,7 +17,7 @@
                     <ul class="sf-menu clearfix">
                        <li><a href="home">Home</a></li>
                        <li><a href="about">About us</a></li>
-                       <li><a href="results">Results</a></li>
+                       <li><a href="events">Events</a></li>
                        <li><a href="technology">Technology</a></li>
                        <li><a href="contacts">Contact</a></li>
                     </ul>
