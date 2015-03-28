@@ -3,10 +3,9 @@
 Software Needed
 eclipse luna (https://www.eclipse.org/downloads/)
 tomcat 7 (http://tomcat.apache.org/download-70.cgi)
-java 1.7 (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+java 7 (http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
     for some reason java 1.8 wouldn't work with eclipse luna
-github (https://windows.github.com/)
-mysql (http://dev.mysql.com/downloads/windows/installer/)
+mysql workbench (http://dev.mysql.com/downloads/windows/installer/)
 
 steps to setup project on your local pc
 copy the github clone url
